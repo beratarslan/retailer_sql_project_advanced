@@ -1,6 +1,7 @@
 -- Solutions
 -- EDA
 
+```sql
 SELECT * FROM customers;
 SELECT * FROM inventory;
 SELECT * FROM order_items;
