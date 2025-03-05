@@ -12,4 +12,8 @@ Throughout the analysis, I tackled key business challenges such as revenue track
 
 To provide a clearer understanding of the database structure, I’ve also included an ERD diagram that visually maps out the relationships between different tables.
 
+### **Entity-Relationship Diagram (ERD)**
+
+![E-Commerce ERD](images/e_commerce_erd_diagram.png)
+
 ---
