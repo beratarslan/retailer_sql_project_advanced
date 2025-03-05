@@ -44,7 +44,7 @@ WHERE return_date IS NULL;
 SELECT * FROM order_items;
 
 -- ---------------------------------------
--- Amazon Business Problems
+-- E_commerce Business Problems
 -- Advanced SQL
 -- ---------------------------------------
 
