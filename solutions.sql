@@ -44,8 +44,7 @@ WHERE return_date IS NULL;
 SELECT * FROM order_items;
 
 -- ---------------------------------------
--- E_commerce Business Problems
--- Advanced SQL
+-- e-commerce Business Problems
 -- ---------------------------------------
 
 /*
