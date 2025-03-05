@@ -1,48 +1,42 @@
--- Solutions
--- EDA
+# **Solutions**
+
+## **Exploratory Data Analysis (EDA)**
 
 ```sql
+-- Retrieve all records from key tables
 SELECT * FROM customers;
 SELECT * FROM inventory;
 SELECT * FROM order_items;
 SELECT * FROM orders;
 SELECT * FROM payments;
-SELECT 
-	DISTINCT payment_status
-FROM payments
 SELECT * FROM products;
 SELECT * FROM sellers;
 SELECT * FROM shippings;
 
-SELECT * 
-FROM shippings
-WHERE return_date IS NOT NULL;
+-- Retrieve distinct payment statuses
+SELECT DISTINCT payment_status FROM payments;
 
-SELECT * 
-FROM orders
+-- Retrieve shipping records with returned orders
+SELECT * FROM shippings WHERE return_date IS NOT NULL;
 
-SELECT * 
-FROM orders
-WHERE order_id = 6747;
+-- Retrieve all orders
+SELECT * FROM orders;
 
+-- Retrieve details for a specific order
+SELECT * FROM orders WHERE order_id = 6747;
 
-SELECT * 
-FROM payments
+-- Retrieve all payment records
+SELECT * FROM payments;
 
-SELECT * 
-FROM payments
-WHERE order_id = 6747;
+-- Retrieve payments for a specific order
+SELECT * FROM payments WHERE order_id = 6747;
 
-SELECT * 
-FROM shippings
-WHERE return_date IS NOT NULL;
+-- Retrieve non-returned shipping records
+SELECT * FROM shippings WHERE return_date IS NULL;
 
-SELECT * 
-FROM shippings
-WHERE return_date IS NULL;
-
-
+-- Retrieve all order items
 SELECT * FROM order_items;
+
 
 -- ---------------------------------------
 -- Amazon Business Problems
