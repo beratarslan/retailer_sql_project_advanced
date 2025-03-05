@@ -49,47 +49,38 @@ SELECT * FROM order_items;
 -- Advanced SQL
 -- ---------------------------------------
 
-/*
-1. Top Selling Products
-Query the top 10 products by total sales value.
-Challenge: Include product name, total quantity sold, and total sales value.
-*/
--- join oi -- o -- p
--- group by pid
--- total sale
--- top 10
+## **1. Top Selling Products**
+**Goal:** Query the top 10 products by total sales value.  
+**Challenge:** Include product name, total quantity sold, and total sales value.  
 
-	
--- Creating new column
+```sql
+-- Creating a new column for total sales
 ALTER TABLE order_items
 ADD COLUMN total_sale FLOAT;
 
-
+-- Verify the column addition
 SELECT * FROM order_items;
 
+-- Update the column with calculated total sale values
 UPDATE order_items
 SET total_sale = quantity * price_per_unit;
-SELECT * FROM order_items;
 
+-- Check the updated data
+SELECT * FROM order_items ORDER BY quantity DESC;
 
-SELECT * FROM order_items
-ORDER BY quantity DESC;
-
+-- Query to find the top 10 best-selling products
 SELECT 
-	oi.product_id,
-	p.product_name,
-	SUM(oi.total_sale) as total_sale,
-	COUNT(o.order_id)  as total_orders
-FROM orders as o
-JOIN
-order_items as oi
-ON oi.order_id = o.order_id
-JOIN 
-products as p
-ON p.product_id = oi.product_id
+    oi.product_id,
+    p.product_name,
+    SUM(oi.total_sale) AS total_sale,
+    COUNT(o.order_id) AS total_orders
+FROM orders AS o
+JOIN order_items AS oi ON oi.order_id = o.order_id
+JOIN products AS p ON p.product_id = oi.product_id
 GROUP BY 1, 2
 ORDER BY 3 DESC
-LIMIT 10
+LIMIT 10;
+
 
 
 
