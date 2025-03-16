@@ -1,7 +1,5 @@
 # **E-Commerce Sales Analysis Project**
 
-### **Difficulty Level: Advanced**
-
 ---
 
 ## **Project Overview**
